@@ -1,0 +1,85 @@
+# time list comprehension code from Chapter 14
+
+
+c:\code>py -3 -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py')]"
+100 loops, best of 3: 953 usec per loop
+
+c:\code>py -3 -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " res.append(line.rstrip())"
+100 loops, best of 3: 1.07 msec per loop
+
+c:\code>py -3 -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py') if line[0] == 'p']"
+100 loops, best of 3: 763 usec per loop
+
+c:\code>py -3 -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " if line[0] == 'p':" "  res.append(line.rstrip())"
+100 loops, best of 3: 739 usec per loop
+
+
+
+c:\code>py -2 -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py')]"
+100 loops, best of 3: 561 usec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " res.append(line.rstrip())"
+100 loops, best of 3: 707 usec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py') if line[0] == 'p']"
+100 loops, best of 3: 417 usec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " if line[0] == 'p':" "  res.append(line.rstrip())"
+100 loops, best of 3: 419 usec per loop
+
+
+
+c:\code>C:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py')]"
+100 loops, best of 3: 9.49 msec per loop
+
+c:\code>C:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " res.append(line.rstrip())"
+100 loops, best of 3: 9.45 msec per loop
+
+c:\code>C:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "lines = [line.rstrip() for line in open('C:/Python33/Lib/pdb.py') if line[0] == 'p']"
+100 loops, best of 3: 9.24 msec per loop
+
+c:\code>C:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "res=[]" "for line in open('C:/Python33/Lib/pdb.py'):" " if line[0] == 'p':" "  res.append(line.rstrip())"
+100 loops, best of 3: 9.26 msec per loop
+
+
+-------
+
+
+c:\code>py -3 -m timeit -n 100 -r 3 "[x + y for x in 'abc' for y in 'lmn']"
+100 loops, best of 3: 1.95 usec per loop
+
+c:\code>py -3 -m timeit -n 100 -r 3 "res=[]" "for x in 'abc':" " for y in 'lmn':" " res.append(x + y)"
+100 loops, best of 3: 2.54 usec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "[x + y for x in 'abc' for y in 'lmn']"
+100 loops, best of 3: 2.09 usec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "res=[]" "for x in 'abc':" " for y in 'lmn':" " res.append(x + y)"
+100 loops, best of 3: 2.52 usec per loop
+
+c:\code>c:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "[x + y for x in 'abc' for y in 'lmn']"
+100 loops, best of 3: 3.31 usec per loop
+
+c:\code>c:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "res=[]" "for x in 'abc':" " for y in 'lmn':" "  res.append(x + y)"
+100 loops, best of 3: 4.75 usec per loop
+
+
+
+c:\code>py -3 -m timeit -n 100 -r 3 "[x + y for x in 'abc'*100 for y in 'lmn'*100]"
+100 loops, best of 3: 14.7 msec per loop
+
+c:\code>py -3 -m timeit -n 100 -r 3 "res=[]" "for x in 'abc'*100:" " for y in 'lmn'*100:" "  res.append(x + y)"
+100 loops, best of 3: 19.8 msec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "[x + y for x in 'abc'*100 for y in 'lmn'*100]"
+100 loops, best of 3: 8.21 msec per loop
+
+c:\code>py -2 -m timeit -n 100 -r 3 "res=[]" "for x in 'abc'*100:" " for y in 'lmn'*100:" "  res.append(x + y)"
+100 loops, best of 3: 13.6 msec per loop
+
+c:\code>c:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "[x + y for x in 'abc'*100 for y in 'lmn'*100]"
+100 loops, best of 3: 6.81 msec per loop
+
+c:\code>c:\pypy\pypy-1.9\pypy -m timeit -n 100 -r 3 "res=[]" "for x in 'abc'*100:" " for y in 'lmn'*100:" "  res.append(x + y)"
+100 loops, best of 3: 6.63 msec per loop
+

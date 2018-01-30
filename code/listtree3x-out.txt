@@ -1,0 +1,62 @@
+<Instance of Sub, address 43454248:
+ _ListTree__visited={}
+ data1=spam
+ data2=eggs
+ data3=42
+
+....<Class Sub, address 36431064:
+     __doc__
+     __init__
+     __module__
+     __qualname__
+     spam=<function tester.<locals>.Sub.spam at 0x00000000029717B8>
+
+........<Class Super, address 36430152:
+         __dict__
+         __doc__
+         __init__
+         __module__
+         __qualname__
+         __weakref__
+         ham=<function tester.<locals>.Super.ham at 0x00000000029716A8>
+
+............<Class object, address 506770624:
+             __class__
+             __delattr__
+             __dir__
+             __doc__
+             __eq__
+             __format__
+             __ge__
+             __getattribute__
+             __gt__
+             __hash__
+             __init__
+             __le__
+             __lt__
+             __ne__
+             __new__
+             __reduce__
+             __reduce_ex__
+             __repr__
+             __setattr__
+             __sizeof__
+             __str__
+             __subclasshook__
+............>
+........>
+
+........<Class ListTree, address 36429240:
+         _ListTree__attrnames=<function ListTree.__attrnames at 0x00000000029710D0>
+         _ListTree__listclass=<function ListTree.__listclass at 0x0000000002971158>
+         __dict__
+         __doc__
+         __module__
+         __qualname__
+         __str__
+         __weakref__
+
+............<Class object:, address 506770624: (see above)>
+........>
+....>
+>

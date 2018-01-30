@@ -1,0 +1,67 @@
+# Numbers
+
+>>> 2 ** 16                           # 2 raised to the power 16
+65536
+>>> 2 / 5, 2 / 5.0                    # Integer / truncates in 2.X, but not 3.X
+(0.40000000000000002, 0.40000000000000002)
+
+# Strings
+
+>>> "spam" + "eggs"                   # Concatenation
+'spameggs'
+>>> S = "ham"
+>>> "eggs " + S
+'eggs ham'
+>>> S * 5                             # Repetition
+'hamhamhamhamham'
+>>> S[:0]                             # An empty slice at the front -- [0:0]
+''                                    # Empty of same type as object sliced
+
+>>> "green %s and %s" % ("eggs", S)   # Formatting
+'green eggs and ham'
+>>> 'green {0} and {1}'.format('eggs', S)
+'green eggs and ham'
+
+# Tuples
+
+>>> ('x',)[0]                         # Indexing a single-item tuple
+'x'
+>>> ('x', 'y')[1]                     # Indexing a two-item tuple
+'y'
+
+# Lists
+
+>>> L = [1,2,3] + [4,5,6]             # List operations
+>>> L, L[:], L[:0], L[-2], L[-2:]
+([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6], [], 5, [5, 6])
+>>> ([1,2,3]+[4,5,6])[2:4]
+[3, 4]
+>>> [L[2], L[3]]                      # Fetch from offsets; store in a list
+[3, 4]
+>>> L.reverse(); L                    # Method: reverse list in place
+[6, 5, 4, 3, 2, 1]
+>>> L.sort(); L                       # Method: sort list in place
+[1, 2, 3, 4, 5, 6]
+>>> L.index(4)                        # Method: offset of first four (search)
+3
+
+# Dictionaries
+
+>>> {'a':1, 'b':2}['b']               # Index a dictionary by key
+2
+>>> D = {'x':1, 'y':2, 'z':3}
+>>> D['w'] = 0                        # Create a new entry
+>>> D['x'] + D['w']
+1
+>>> D[(1,2,3)] = 4                    # A tuple used as a key (immutable)
+
+>>> D
+{'w': 0, 'z': 3, 'y': 2, (1, 2, 3): 4, 'x': 1}
+
+>>> list(D.keys()), list(D.values()), (1,2,3) in D         # Methods, key test
+(['w', 'z', 'y', (1, 2, 3), 'x'], [0, 3, 2, 4, 1], True)
+
+# Empties
+
+>>> [[]], ["",[],(),{},None]          # Lots of nothings: empty objects
+([[]], ['', [], (), {}, None])

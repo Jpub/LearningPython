@@ -1,0 +1,28 @@
+<Instance of Sub, address 35510984:
+ _ListTree__visited={}
+ data1=spam
+ data2=eggs
+ data3=42
+
+....<Class Sub, address 35472968:
+     __doc__
+     __init__
+     __module__
+     spam=<unbound method Sub.spam>
+
+........<Class Super, address 35473064:
+         __doc__
+         __init__
+         __module__
+         ham=<unbound method Super.ham>
+........>
+
+........<Class ListTree, address 30337064:
+         _ListTree__attrnames=<unbound method ListTree.__attrnames>
+         _ListTree__listclass=<unbound method ListTree.__listclass>
+         __doc__
+         __module__
+         __str__
+........>
+....>
+>
